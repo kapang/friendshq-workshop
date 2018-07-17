@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+// aka app.component.ts (since it's a sibling, it's a relative path so you don't need to write .ts, it already is looking for the ts)
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
