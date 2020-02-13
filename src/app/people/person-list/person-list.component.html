@@ -1,0 +1,44 @@
+<div class="person-list">
+
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div class="list-group">
+        <app-show-person *ngFor="let f of friends" [friend]=f (saveMessage)="showBanner($event)">
+          <!-- the parent may care about the event, so we attach the handler, if it doesn't care we don't need to -->
+          <!-- $event is optional if you use it, don't need to pass it if you don't use it -->
+
+        </app-show-person>
+        <!-- pseudocode equivalent
+                for (f in friends) {
+                  <app-show-person [friend] = f> // the [] is for setting the input to what var; aka attribute setter syntax
+                    //  no more ng-repeat from angular 1 we use *ngFor
+                    // only 3 directives now, ngFor, ngSwitch, ngIf - everything else is logic in components
+          } -->
+
+        <!--Don't need the below since it's now in person-list
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">
+                <!--Display first friend here--
+                {{ friends[0].firstName }} {{ friends[0].lastName }}
+
+              </h5>
+            </div>
+          </a>
+        -->
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-3 sidebar">
+      <a href="#" class="btn btn-success sidebar-cta disabled">
+        Add someone
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-9">
+      <div *ngIf="displayBanner" class="alert alert-success box-msg" role="alert">
+        <strong>List Saved!</strong> Your changes has been saved for {{lastSavedUser.firstName}} {{lastSavedUser.lastName}}.
+      </div>
+    </div>
+  </div>
+</div>

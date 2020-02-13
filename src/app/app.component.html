@@ -8,10 +8,11 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
         <li class="nav-item">
-          <a class="nav-link" href="#">Dashboard</a>
+          <a class="nav-link" routerLink='dashboard' routerLinkActive='active'>Dashboard</a>
+          <!-- don't use a href use routerLink as directive-->
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">People</a>
+          <a class="nav-link" routerLink='people' routerLinkActive='active'>People</a>
         </li>
       </ul>
     </div>
@@ -19,8 +20,9 @@
 </div>
 <div class="container">
   <!-- Insert your code here -->
-  <!-- <h1>Hi {{name}}</h1> -->
-  <app-people></app-people>
+  <!-- <app-people></app-people> -->
+  <router-outlet></router-outlet>
+  <!-- this is a placeholder to tell it what route to use -->
 </div>
 <footer class="footer text-center">
   <nav class="navbar fixed-bottom navbar-light bg-faded">
